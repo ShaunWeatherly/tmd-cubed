@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/c1badd79-1242-4861-8fb5-72d3b0004af8/resourceGroups/tmd-cubed/providers/Microsoft.Web/sites/tmd-cubed",
+    "appService.deploySubpath": "."
+}
