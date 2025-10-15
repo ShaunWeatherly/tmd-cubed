@@ -1,5 +1,5 @@
-/*
-  Tokyo Night Storm Theme Palette
+/* Theme variables */  
+/*Tokyo Night Storm Theme Palette
   Inspired by the VS Code theme
   https://github.com/enkia/tokyo-night-vscode-theme
 */
@@ -19,10 +19,28 @@
   --tn-border: #3b4261;
   --tn-black: #24283b;
 }
+.light-theme {
+  --tn-bg: #f6f8fa;
+  --tn-bg-dark: #e9eaf3;
+  --tn-fg: #24283b;
+  --tn-fg-light: #565f89;
+  --tn-blue: #34548a;
+  --tn-cyan: #179299;
+  --tn-green: #76946a;
+  --tn-magenta: #9854f1;
+  --tn-orange: #b15c00;
+  --tn-red: #c53b53;
+  --tn-yellow: #b7c43a;
+  --tn-accent: #e9eaf3;
+  --tn-border: #a9b1d6;
+  --tn-black: #fff;
+  --tn-white: #24283b;
+}
+
 
 body {
   background: var(--tn-bg-dark);
-  color: var(--tn-fg-light);
+  color: var(--tn-white);
 }
 
 a {

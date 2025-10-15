@@ -19,10 +19,11 @@
         .dashboard-links {
           display: flex;
           flex-direction: column;
-          align-items: center;
-          gap: 0rem;
+          align-items: flex-end;
+          gap: 0.1rem;
           margin-top: 3rem;
           margin-bottom: 3rem;
+          margin-right: 1cm;
         }
         .dashboard-link {
           margin: 0.5rem auto;
@@ -35,7 +36,7 @@
           font-size: 1.3rem;
           font-weight: bold;
           text-decoration: none;
-          color: #24283b;
+          color: var(--tn-fg, #222);
           box-shadow: 0 2px 8px rgba(0,0,0,0.07);
           transition: background 0.2s, box-shadow 0.2s;
         }
@@ -63,7 +64,7 @@
         width: 90vw;
         max-width: 700px;
         background: var(--tn-bg, #a9b1d6);
-        color: var(--tn-black, #3b4261);
+        color: var(--tn-fg, #3b4261);
         border-radius: 12px;
         padding: 1.0rem 1.5rem;
         box-shadow: 0 2px 8px rgba(0,0,0,0.04);

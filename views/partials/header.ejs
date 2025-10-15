@@ -8,8 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
-    position: fixed;
+    padding: 0.5rem 1.0rem;
+    position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -42,7 +42,7 @@
     font-weight: 500;
     font-size: 1.1rem;
     position: relative;
-    padding: 0.3rem 1.5rem;
+    padding: 0.3rem 1.0rem;
     border-radius: 5px;
     transition: background 0.15s;
   }
@@ -66,7 +66,7 @@
     overflow: hidden;
   }
   .dropdown-content a {
-    color: var(--tn-black, #24283b);
+    color: var(--tn-fg, #24283b);
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     display: block;
@@ -110,13 +110,53 @@
   <div class="banner-links">
     <a class="banner-link" href="/">Home</a>
     <div class="dropdown">
-  <a class="banner-link dropdown-btn" href="#" aria-label="Sections">&#9776;</a>
+      <a class="banner-link dropdown-btn" href="#" aria-label="Sections">&#9776;</a>
       <div class="dropdown-content">
-        <a href="/overview">Overview</a>
-        <a href="/browse">Browse</a>
-        <a href="/analyze">Analyze</a>
-        <a href="/contribute">Contribute</a>
+          <a href="/overview">Overview</a>
+          <a href="/browse">Browse</a>
+          <a href="/analyze">Analyze</a>
+          <a href="/contribute">Contribute</a>
+          <button id="theme-toggle" class="banner-link theme-toggle-btn" style="width:100%;text-align:left;font-size:1.0rem;cursor:pointer;border:none;background:none;padding: 0.7rem 1.2rem;outline:none;display:flex;align-items:center;gap:0.7em;" aria-label="Toggle theme"> Theme <span id="theme-symbol" style="font-size:1.6em;line-height:1;">●</span> </button>
+<style>
+  .theme-toggle-btn {
+    transition: background 0.15s;
+    color: var(--tn-fg, #24283b);
+  }
+  :root .theme-toggle-btn:hover {
+    background: #c0caf5; /* light theme bg */
+    color: #24283b;
+  }
+  .light-theme .theme-toggle-btn:hover {
+    background: var(--tn-bg); /* dark theme bg */
+    color: #c0caf5;
+  }
+</style>
       </div>
     </div>
   </div>
+</style>
+<script>
+  // Theme toggle logic
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const symbol = document.getElementById('theme-symbol');
+    function setTheme(theme) {
+      if (theme === 'light') {
+        root.classList.add('light-theme');
+        symbol.textContent = '○';
+      } else {
+        root.classList.remove('light-theme');
+        symbol.textContent = '●';
+      }
+      localStorage.setItem('theme', theme);
+    }
+    // Initial theme
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'light' ? 'light' : 'dark');
+    btn.onclick = function() {
+      setTheme(root.classList.contains('light-theme') ? 'dark' : 'light');
+    };
+  });
+</script>
 </div>
