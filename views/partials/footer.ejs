@@ -9,20 +9,23 @@
       <a href="/contribute">Contribute</a>
     </span>
   </div>
-</footer>
+  </footer>
 <style>
   .footer {
-    width: 100%;
+    width: 100vw;
+    left: 0;
+    right: 0;
     background: var(--tn-accent, #a9b1d6);
     color: var(--tn-fg-light, #24283b);
     text-align: center;
     padding: 1.2rem 0 1rem 0;
-    position: static;
-    left: 0;
+    position: fixed;
     bottom: 0;
     z-index: 999;
     font-size: 1rem;
     box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
   .footer-content {
     display: flex;

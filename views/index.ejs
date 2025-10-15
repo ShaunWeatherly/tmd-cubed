@@ -15,55 +15,58 @@
         {left: '\\[', right: '\\]', display: true}
       ]});"></script>
     <style>
-      .dashboard-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        margin-top: 2rem;
-        justify-content: center;
-      }
-      .dashboard-link {
-        flex: 1 1 200px;
-        max-width: 300px;
-        min-width: 200px;
-        background: var(--tn-bg, #a9b1d6);
-        border-radius: 12px;
-        padding: 2rem;
-        text-align: center;
-        font-size: 1.3rem;
-        font-weight: bold;
-        text-decoration: none;
-        color: var(--tn-bg-dark, #32364b);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-        transition: background 0.2s, box-shadow 0.2s;
-      }
+      
+        .dashboard-links {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0rem;
+          margin-top: 3rem;
+          margin-bottom: 3rem;
+        }
+        .dashboard-link {
+          margin: 0.5rem auto;
+          width: 90vw;
+          max-width: 700px;
+          background: var(--tn-bg, #98a2ce);
+          border-radius: 12px;
+          padding: 0.5rem 1.5rem;
+          text-align: center;
+          font-size: 1.3rem;
+          font-weight: bold;
+          text-decoration: none;
+          color: #24283b;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+          transition: background 0.2s, box-shadow 0.2s;
+        }
       .dashboard-link:hover {
         box-shadow: 0 4px 16px rgba(0,0,0,0.35);
       }
       .dashboard-link:nth-child(1):hover {
         background: var(--tn-blue, #7aa2f7); /* blue for Overview */
-        color: var(--tn-border, #3b4261);
+        color: var(--tn-black, #222);
       }
       .dashboard-link:nth-child(2):hover {
         background: var(--tn-green, #9ece6a); /* green for Browse Data */
-        color: var(--tn-border, #3b4261);
+        color: var(--tn-black, #222);
       }
       .dashboard-link:nth-child(3):hover {
         background: var(--tn-magenta, #bb9af7); /* magenta for Analyze */
-        color: var(--tn-border, #3b4261);
+        color: var(--tn-black, #222);
       }
       .dashboard-link:nth-child(4):hover {
         background: var(--tn-yellow, #e0af68); /* yellow/orange for Contribute */
-        color: var(--tn-border, #3b4261);
+        color: var(--tn-black, #3b4261);
       }
       .summary {
-        margin: 1.5rem auto;
+        margin: 0.5rem auto;
+        width: 90vw;
         max-width: 700px;
         background: var(--tn-bg, #a9b1d6);
-        color: var(--tn-border, #3b4261);
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        color: var(--tn-black, #3b4261);
+        border-radius: 12px;
+        padding: 1.0rem 1.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
       }
     </style>
   </head>
