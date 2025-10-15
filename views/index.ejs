@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Banner styles moved to partials/header.ejs -->
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- KaTeX for LaTeX rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body, {delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ]});"></script>
+    <style>
+      .dashboard-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+        justify-content: center;
+      }
+      .dashboard-link {
+        flex: 1 1 200px;
+        max-width: 300px;
+        min-width: 200px;
+        background: var(--tn-bg, #a9b1d6);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--tn-bg-dark, #32364b);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .dashboard-link:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+      }
+      .dashboard-link:nth-child(1):hover {
+        background: var(--tn-blue, #7aa2f7); /* blue for Overview */
+        color: var(--tn-border, #3b4261);
+      }
+      .dashboard-link:nth-child(2):hover {
+        background: var(--tn-green, #9ece6a); /* green for Browse Data */
+        color: var(--tn-border, #3b4261);
+      }
+      .dashboard-link:nth-child(3):hover {
+        background: var(--tn-magenta, #bb9af7); /* magenta for Analyze */
+        color: var(--tn-border, #3b4261);
+      }
+      .dashboard-link:nth-child(4):hover {
+        background: var(--tn-yellow, #e0af68); /* yellow/orange for Contribute */
+        color: var(--tn-border, #3b4261);
+      }
+      .summary {
+        margin: 1.5rem auto;
+        max-width: 700px;
+        background: var(--tn-bg, #a9b1d6);
+        color: var(--tn-border, #3b4261);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      }
+    </style>
   </head>
   <body>
+    <%- include('partials/header') %>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Interface for organizing and accessing high-throughput computational screening data from research studies.</p>
+    
+    <div class="dashboard-links">
+      <a class="dashboard-link" href="/overview">Overview<br><span style="font-size:0.9rem;font-weight:normal;">Research details, infrastructure, parameters</span></a>
+      <a class="dashboard-link" href="/browse">Browse<br><span style="font-size:0.9rem;font-weight:normal;">Explore all host materials and data</span></a>
+      <a class="dashboard-link" href="/analyze">Analyze<br><span style="font-size:0.9rem;font-weight:normal;">Query and visualize selected data</span></a>
+      <a class="dashboard-link" href="/contribute">Contribute<br><span style="font-size:0.9rem;font-weight:normal;">Request to add your data</span></a>
+    </div>
+    <div class="summary">
+      <h2>About</h2>
+      <p>This web application provides tools for managing, browsing, analyzing, and contributing to a large collection of computational screening data. The structure and features are designed to be extensible and adaptable to evolving research needs.</p>
+      <ul>
+        <li>~10 host crystal families</li>
+        <li>Hundreds of unique point defects per family</li>
+        <li>Data organized by screening workflow stages</li>
+      </ul>
+    </div>
+    <%- include('partials/footer') %>
   </body>
 </html>

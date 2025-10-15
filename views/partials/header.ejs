@@ -1,0 +1,118 @@
+<style>
+  .banner {
+    width: 100%;
+    background: var(--tn-accent, #a9b1d6);
+    color: var(--tn-white, #24283b);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .banner-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  .banner-logo img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #7aa2f7;
+    object-fit: cover;
+  }
+  .banner-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .banner-link {
+    color: var(--tn-white, #a9b1d6);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    transition: background 0.15s;
+  }
+  .banner-link:hover {
+    background: var(--tn-border, #565f89);
+    color: #fff;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: var(--tn-bg, #24283b);
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    z-index: 1001;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .dropdown-content a {
+    color: var(--tn-black, #24283b);
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    transition: background 0.13s;
+  }
+  .dropdown-content a:hover {
+    background: var(--tn-accent, #565f89);
+    color: var(--tn-black, #24283b);
+  }
+  .dropdown-content a:nth-child(1):hover {
+    background: var(--tn-blue, #7aa2f7); /* Overview - blue */
+    color: var(--tn-black, #24283b);
+  }
+  .dropdown-content a:nth-child(2):hover {
+    background: var(--tn-green, #9ece6a); /* Browse Data - green */
+    color: var(--tn-black, #24283b);
+  }
+  .dropdown-content a:nth-child(3):hover {
+    background: var(--tn-magenta, #bb9af7); /* Analyze - magenta */
+    color: var(--tn-black, #24283b);
+  }
+  .dropdown-content a:nth-child(4):hover {
+    background: var(--tn-yellow, #e0af68); /* Contribute - yellow/orange */
+    color: var(--tn-black, #24283b);
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-btn::after {
+    content: '\25BC';
+    margin-left: 0.4em;
+    font-size: 0.8em;
+  }
+</style>
+<div class="banner">
+  <div class="banner-logo">
+    <img src="https://placehold.co/36x36/7aa2f7/fff?text=DB" alt="Logo" />
+    $\textbf{TM}D^{3}$
+  </div>
+  <div class="banner-links">
+    <a class="banner-link" href="/">Home</a>
+    <div class="dropdown">
+  <a class="banner-link dropdown-btn" href="#" aria-label="Sections">&#9776;</a>
+      <div class="dropdown-content">
+        <a href="/overview">Overview</a>
+        <a href="/browse">Browse</a>
+        <a href="/analyze">Analyze</a>
+        <a href="/contribute">Contribute</a>
+      </div>
+    </div>
+  </div>
+</div>

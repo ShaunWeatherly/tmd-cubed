@@ -1,3 +1,48 @@
+/*
+  Tokyo Night Storm Theme Palette
+  Inspired by the VS Code theme
+  https://github.com/enkia/tokyo-night-vscode-theme
+*/
+:root {
+  --tn-bg: #98a2ce;
+  --tn-bg-dark: #32364b;
+  --tn-white: #c0caf5;
+  --tn-fg-light: #a9b1d6;
+  --tn-blue: #7aa2f7;
+  --tn-cyan: #7dcfff;
+  --tn-green: #9ece6a;
+  --tn-magenta: #bb9af7;
+  --tn-orange: #ff9e64;
+  --tn-red: #f7768e;
+  --tn-yellow: #e0af68;
+  --tn-accent: #565f89;
+  --tn-border: #3b4261;
+  --tn-black: #24283b;
+}
+
+body {
+  background: var(--tn-bg-dark);
+  color: var(--tn-fg-light);
+}
+
+a {
+  color: var(--tn-blue);
+}
+
+a:hover {
+  color: var(--tn-cyan);
+}
+
+/* Example usage for dashboard links */
+.dashboard-link {
+  background: var(--tn-bg);
+  color: var(--tn-fg);
+  border: 2px solid var(--tn-border);
+}
+.dashboard-link:hover {
+  background: var(--tn-border);
+  color: var(--tn-accent);
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;

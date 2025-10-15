@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="footer-content">
+    <span>&copy; <%= new Date().getFullYear() %> Van Voorhis Group | Massachusetts Institute of Technology</span>
+    <span class="footer-links">
+      <a href="/">Home</a> |
+      <a href="/overview">Overview</a> |
+      <a href="/browse">Browse</a> |
+      <a href="/analyze">Analyze</a> |
+      <a href="/contribute">Contribute</a>
+    </span>
+  </div>
+</footer>
+<style>
+  .footer {
+    width: 100%;
+    background: var(--tn-accent, #a9b1d6);
+    color: var(--tn-fg-light, #24283b);
+    text-align: center;
+    padding: 1.2rem 0 1rem 0;
+    position: static;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    font-size: 1rem;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-links a {
+    color: var(--tn-blue, #7aa2f7);
+    text-decoration: none;
+    margin: 0 0.2em;
+    font-size: 1rem;
+  }
+  .footer-links a:hover {
+    color: var(--tn-cyan, #7dcfff);
+    text-decoration: underline;
+  }
+</style>
